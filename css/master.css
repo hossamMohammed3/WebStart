@@ -1,0 +1,528 @@
+:root{
+    --main-color: #564292;
+    --main-color2: #7F345B;
+    --secoundery-color: #8D9AC7;
+    --secoundery-color2: #9C82CF;
+    --master-color: #EAF0F7;
+
+}
+
+/* start global rules */
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: "Work Sans", sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+/* small screen */
+@media (min-width: 768px) {
+    .container{
+        width: 750px;
+    }
+}
+/* medium screen */
+@media (min-width: 992px) {
+    .container{
+        width: 970px;
+    }
+}
+/* large screen */
+@media (min-width: 1200px) {
+    .container{
+        width: 1170px;
+    }
+}
+.specil-heading{
+    text-align: center;
+    font-size: 100px;
+    color: #0000002b;
+    font-weight: bold;
+    margin: 0;
+    padding: 0 0 20px 0;
+
+}
+@media (max-width: 767px){
+    .specil-heading{
+        font-size: 50px;
+    }
+}
+/* end global rules */
+
+/* start styling header */
+
+.header{
+    background-color: var(--master-color);
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    
+}
+.header .container{
+    /* background-color: #aaa; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo{
+    width: 150px
+}
+.header .links .icons i{
+    display: none;
+    color: var(--main-color);
+}
+.header .links{
+    color: var(--main-color);
+}
+.header .linksUl{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+}
+.header .linksUl li{
+    list-style: none;
+}
+.header .linksUl li a:hover{
+    color: var(--main-color2);
+}
+.header .linksUl li a{
+    text-decoration: none;
+    font-size: 20px;
+    /* font-weight: bold; */
+    color: var(--main-color);
+    margin: 15px ;
+}
+@media (min-width: 768px) {
+    
+    .header .linksUl li a:hover{
+        font-weight: bold;
+        border-bottom: 1px solid black;
+        
+    }
+}
+
+@media (max-width:767px) {
+    .links {
+        position: relative;
+    }
+    .links .icons i:hover{
+        color: var(--main-color2);
+    }
+    .header .links .icons i{
+        display: block;
+        font-size: 30px;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+    .links .linksUl{
+        list-style: none;
+        position: absolute;
+        min-width: 200px;
+        background-color: #eee;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        top: calc(100% + 15px);
+        display: none;
+        transition: .3s;
+        z-index: 1;
+        width: 100vw;
+    }
+    .links ul::before{
+        content: "";
+        border-width: 15px;
+        border-style: solid;
+        border-color: transparent transparent #aaa transparent;
+        position: absolute;
+        right: 20px;
+        top: -30px;
+    }
+    .links ul li a { 
+        display: block;
+        text-decoration: none;
+        padding: 5px 30px;
+        transition: .3s;
+    }
+    .links ul li a:hover{
+        padding-left: 50px;
+        color: var(--main-color2);
+
+    }
+    .links ul li:not(:last-child)  {
+        border-bottom: 1px solid #b4b4b4
+    }
+}
+
+
+
+/* start landing */
+.landing{
+    background-image: url(../picture/snowcovered-mountains-providing-majestic-backdrop.jpg);
+    height: calc(100vh - 45px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.landing .intro-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.landing .intro-text h1{
+    margin: 0;
+    font-weight: bold;
+    font-size: 50px;
+    color: black;
+
+}
+.landing .intro-text p{
+    font-size: 25px;
+    line-height: 1.4;
+    width: 320px;
+    max-width: 100%;
+    color: var(--main-color2)
+}
+/* end landing */
+
+/* start fetutre */
+
+.features{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.features .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+.features .feat{
+    padding: 20px;
+    text-align: center;
+}
+.features .feat h2{
+    font-weight: bold;
+    margin: 30px 0;
+}
+.features .feat p{
+    line-height: 1.4;
+}
+
+/* end fetutre */
+
+/* start services */
+
+ .services{
+    padding: 60px 0;
+    background-color: #eee;
+    position: sticky;
+    z-index: -2;
+}
+.services .conntent-services{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+.services .serv{
+    display: flex;
+    margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+    .services .serv{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.services .serv li{
+    flex-basis:  60px;
+    /* margin: 0 20px 0 0; */
+}
+.services .serv .text{
+    flex: 1;
+} 
+.services .serv .text h3{
+    margin: 0;
+}
+.services .imge{
+    text-align: center;
+    position: relative;
+}
+.services .conntent-services .imge::before{
+    content: "";
+    background-color: var(--secoundery-color);
+    position: absolute;
+    width: 100px;
+    height: calc(100% + 60px);
+    top: -30px;
+    right: 20px;
+    z-index: -1;
+}
+@media (max-width: 991px) {
+    .services .conntent-services .imge{
+        display: none;
+    }
+    
+}
+
+/* start portfolio */
+
+.portfolio{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.portfolio .cardes{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,  minmax(300px, 1fr)); 
+    gap: 30px;
+    align-content: center;
+    margin-top: 60px
+    
+}
+.portfolio .cardes .card{
+    background-color: #eee;
+    text-align: center;
+    
+    
+}
+.portfolio .cardes .card img{
+    width: 100%;
+}
+.portfolio .cardes .card h3{
+    padding: 0 20px;
+}
+.portfolio .cardes .card p{
+    padding: 10px 20px;
+}
+/* end portfolio */
+
+/* start about */
+
+.about{
+    background-color: #eee;
+    position: sticky;
+    z-index: -2;
+    padding: 40px 0;
+}
+.about .cards-about{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 30px 0;
+}
+.about .cards-about .imge{
+    width: 178;
+    height: 284;
+    position: relative;
+}
+.about .cards-about .imge img{
+    max-width: 100%;
+}
+.about .cards-about .imge::before{
+    content: "";
+    background-color:var(--secoundery-color);
+    position: absolute;
+    width: 64px;
+    height: calc(100% + 40px);
+    top: -44px;
+    left: -20px;
+    z-index: -1;
+}
+.about .cards-about .imge::after{
+    content: "";
+    width: 90px;
+    position: absolute;
+    height: calc(100% - 100px);
+    border-left: 80px solid var(--secoundery-color);
+    border-bottom: 42px solid var(--secoundery-color);
+    top: -40px;
+    z-index: -1;
+    right: -130px;
+}
+.about .cards-about .card {
+    flex-basis: calc(100% - 500px);
+    position: relative;
+}
+.about .cards-about .card p:first-child{
+    font-weight: bold;
+    line-height: 1.8;
+    margin: -10px 0 50px;
+
+
+}
+.about .cards-about .card p:last-child{
+    line-height: 1.5;
+    padding: 20px 0 ;
+}
+.about .cards-about .card .par::after{
+    content: "";
+    position: absolute;
+    background-color: #10cab7;
+    width: 300px;
+    height: 2px;
+    left: 0;
+    top: 120px;
+}
+@media (max-width: 991px) {
+    .about .cards-about{
+        flex-direction: column;
+        text-align: center;
+    }
+    .about .cards-about .imge{
+        margin: 30px 0 50px;
+    }
+    .about .cards-about .imge::after{
+        right: 154px;
+    }
+    .about .cards-about .imge::before{
+        left: 235px;
+        top: -45px;
+    }
+    .about .cards-about .card .par::after{
+        left: 30%;
+    }
+}
+@media (max-width: 768px) {
+    .about .cards-about .imge::after,
+    .about .cards-about .imge::before{
+        display: none;
+    }
+}
+@media (max-width: 600px){
+    
+    .about .cards-about .card{
+        max-width: 300px;
+        margin-left: 10%;
+    }
+    .about .cards-about .card .par::after{
+        display: none;
+    }
+}
+/* start about */
+
+/* start contact */
+
+.contact{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.contact .contact-info{
+    margin: 100px 0;
+
+}
+.contact .contact-info p:first-child{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.contact .contact-info a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--secoundery-color);
+    margin-left: 25px;
+}
+.contact .contact-info .socil-icon{
+    padding: 30px 0  20px 50px;
+}
+.contact .contact-info .socil-icon i{
+    margin-left: 30px;
+    color: black;
+}
+@media (max-width: 776px) {
+    .contact .contact-info{
+        text-align: center;
+    }
+    .contact .contact-info p:first-child{
+        font-size: 20px;
+    }
+    .contact .contact-info a{
+        font-size: 20px;
+    }
+    .contact .contact-info .socil-icon{
+        padding: 15px 0 10px 30px;
+    }
+    .contact .contact-info .socil-icon i{
+        margin-left: -10px;
+    }
+}
+/* end contact */
+
+/* start footer */
+
+.footer{
+    background-color: var(--main-color);
+    padding: 15px 10px;
+    text-align: center;
+    font-size: 25px;
+    color: #ffffff;
+}
+.footer h3{
+    text-decoration: black underline;
+
+}
+.footer span{
+    font-size: 35px;
+    font-weight: bold;
+}
+@media (max-width:767px) {
+    .footer{
+        padding: 10px 5px;
+        font-size: 15px;
+    }
+    .footer span{
+        font-size: 15px;
+    }
+}
+
+
+/* end footer */
+
+/* start up button */
+
+.Up{
+    position: fixed;
+    bottom: 78px;
+    right: 50px;
+    background-color: var(--main-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: solid 1px black;
+    transition: .3s ease;
+    display: none;
+}
+.Up span{
+    position: absolute;
+    color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-weight: bold;
+}
+@media (max-width: 767px) {
+    .Up{
+        width: 35px;
+        height: 35px;
+        bottom: 50px;
+        right: 40px;
+    }
+    .Up span{
+        font-size: 17px;
+    }
+}
+
+/* start up button */
